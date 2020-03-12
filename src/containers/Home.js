@@ -2,19 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { makeStyles } from '@material-ui/styles'
-import Button from '@material-ui/core/Button'
-import Fab from '@material-ui/core/Fab'
+
+import { Fab, Button, List, ListItemText, ListItem, Switch, Typography } from '@material-ui/core'
+
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
-import Switch from '@material-ui/core/Switch'
-import Typography from '@material-ui/core/Typography'
 
 import logo from 'sources/img/logo.svg'
 
 import { useComponentWillMount } from 'lib/hooks'
+
 import themeDucks from 'reducers/theme'
 import productsDucks from 'reducers/products'
-import { List, ListItemText, ListItem } from '@material-ui/core'
 
 const { updateTheme } = themeDucks.creators
 const { getProducts } = productsDucks.creators
@@ -68,13 +67,13 @@ export default function Home() {
   }, [])
 
   const _handleChangeTheme = () => {
-    dispatch(updateTheme(style === 'ligth' ? 'dark' : 'ligth'))
+    dispatch(updateTheme(style === 'red' ? 'dark' : 'red'))
   }
 
   return (
     <div>
       <Switch
-        checked={style === 'ligth'}
+        checked={style === 'red'}
         color='primary'
         onChange={_handleChangeTheme} />
       <Button>Default</Button>
@@ -117,7 +116,7 @@ export default function Home() {
             href='https://github.com/ghondar/crassa'
             rel='noopener noreferrer'
             target='_blank'>
-              crassa v0.9.19
+            crassa v0.9.19
           </a>
           <List>
             {

@@ -1,5 +1,4 @@
-import indigo from '@material-ui/core/colors/indigo'
-import teal from '@material-ui/core/colors/teal'
+import { indigo, teal } from '@material-ui/core/colors'
 
 const configDefault = {
   typography: {
